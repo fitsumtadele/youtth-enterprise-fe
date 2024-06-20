@@ -4,7 +4,7 @@
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "At Youth Digital Health Alliance, we are committed to transforming the health information technology sector through collaboration and innovation. Bringing together 15 enterprises, we share best practices, ideas, and innovations to enhance efficiency and performance. Our consortium pools resources and expertise to reduce costs and open up new opportunities, enabling us to tackle larger projects and contracts collectively. We aim to create a stronger, more competitive entity that meets the evolving needs of healthcare facilities. As a catalyst for innovation, we foster a dynamic ecosystem where companies collaborate to address common challenges. Leveraging the combined reputation and client base of our member enterprises, we expand our market presence and reach a larger audience, offering a comprehensive range of services and solutions. At Youth Digital Health Alliance, we drive positive change in healthcare by facilitating collaboration and promoting growth and success for all our members.",
     "Why": [
       "Lorem ipsum dolor",
       "Tempor incididunt",
@@ -67,36 +67,36 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-wrench",
+      "name": "Computer, Printer Maintenance and Repair",
+      "text": "We specialize in diagnosing and resolving hardware and software issues for computers and printers. Our skilled technicians ensure that your devices run smoothly and efficiently, minimizing downtime and maximizing productivity."
     },
     {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-laptop",
+      "name": "Basic Computer Software Training",
+      "text": "We offer training programs designed to empower individuals with essential computer skills. Whether you're a beginner or looking to enhance your proficiency, our training sessions cover topics such as computer fundamentals, internet usage, and productivity tools."
     },
     {
-      "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-sitemap",
+      "name": "Local Area Network",
+      "text": "Design and Install Local Area Network at Health Facilities and other organizations. Test HealthNet functionalities at health institutions and provide technical support based on specifications. Network management, Security and Maintenance."
     },
     {
-      "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-code",
+      "name": "Website Development and Maintenance",
+      "text": "Our experienced web developers create visually appealing and functional websites tailored to your business requirements. From e-commerce platforms to informational websites, we deliver high-quality solutions that enhance your online presence."
     },
     {
-      "icon": "fa fa-plane",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-hospital-o",
+      "name": "Comprehensive Training in Point of Care Applications",
+      "text": "We provide specialized training in essential Point of Care applications, including DHIS2, Dagu, EMR, APTS, and more. Our programs equip healthcare professionals with the skills needed to manage patient data efficiently and improve healthcare delivery, offering practical, hands-on experience tailored to your organization's needs."
     },
     {
-      "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-lightbulb-o",
+      "name": "Consulting, Advisory Services, and Vendor Management",
+      "text": "We specialize in providing strategic consulting, advisory services, and vendor management solutions tailored to the unique needs of healthcare organizations. Our expert consultants offer actionable insights to optimize processes, drive innovation, and ensure seamless integration of IT systems. Partner with us to streamline operations, mitigate risks, and achieve your organizational goals efficiently."
     }
-  ],
+],
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
@@ -132,28 +132,28 @@
   "Team": [
     {
       "img": "img/team/01.jpg",
-      "name": "John Doe",
+      "name": "Eskinder Fisseha",
       "job": "Director"
     },
     {
       "img": "img/team/02.jpg",
-      "name": "Mike Doe",
+      "name": "Eyob Eyayesh",
       "job": "Senior Designer"
     },
     {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
+      "img": "img/team/02.jpg",
+      "name": "Wolde Dereje",
       "job": "Senior Designer"
     },
     {
       "img": "img/team/04.jpg",
-      "name": "Karen Doe",
+      "name": "Hiwot",
       "job": "Project Manager"
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
+    "address": "123 Bole, Addis Ababa ",
+    "phone": "+251 9 11 11 11 11",
     "email": "info@company.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
@@ -161,24 +161,24 @@
   },
   "Features": [
     {
-      "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-building",
+      "title": "15",
+      "text": "Companies"
     },
     {
-      "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-users",
+      "title": "160",
+      "text": "Members"
     },
     {
-      "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-map-marker",
+      "title": "9",
+      "text": "Regions"
     },
     {
-      "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-hospital-o",
+      "title": "300",
+      "text": "Health center, Hospital, Woreda Health Office"
     }
   ]
 }

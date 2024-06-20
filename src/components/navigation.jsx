@@ -1,6 +1,10 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; 
 
-export const Navigation = (props) => {
+export const Navigation = () => {
+  const { user, logout } = useAuth();
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -11,15 +15,14 @@ export const Navigation = (props) => {
             data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1"
           >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
             <img src="img/logo.ico" alt="logo" />
-          </a>{" "}
+          </a>
         </div>
 
         <div
@@ -28,8 +31,8 @@ export const Navigation = (props) => {
         >
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="#features" className="page-scroll">
-                Features
+              <a href="#services" className="page-scroll">
+                Services
               </a>
             </li>
             <li>
@@ -38,8 +41,8 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href="#services" className="page-scroll">
-                Services
+              <a href="#features" className="page-scroll">
+                Features
               </a>
             </li>
             <li>
@@ -62,6 +65,25 @@ export const Navigation = (props) => {
                 Contact
               </a>
             </li>
+            {user ? (
+              <>
+                <li className="navbar-user">
+                  <img src="../img/actor.png" alt="User Icon" className="user-icon" />
+                  <span>{user.username}</span>
+                </li>
+                <li>
+                  <button onClick={logout} className="btn btn-link logout-button">
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link to="/login" className="page-scroll">
+                  Login
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

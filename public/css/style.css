@@ -71,6 +71,36 @@ hr {
   border: 0;
 }
 /* Navigation */
+.navbar-logo {
+  max-height: 50px; /* Adjust the height as needed */
+}
+.navbar-default .btn-link {
+  color: #fff;
+  background-color: #007bff;
+  /* margin-left: 22px; */
+  padding: 10px;
+}
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logout-button {
+  color: #337ab7;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+}
 #menu {
   padding: 15px;
   transition: all 0.8s;
@@ -204,20 +234,82 @@ a:focus,
   outline: none;
   outline-offset: none;
 }
+/*Login css*/
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.login-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
 /* Header Section */
 .intro {
   display: table;
   width: 100%;
   padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
-  background-color: #e5e5e5;
+  background: url(../img/about.jpg) center center no-repeat;
+  background-color: #181616;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(22, 13, 101, 0.2);
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
@@ -299,7 +391,7 @@ header .intro-text {
 }
 #about img {
   width: 520px;
-  margin-top: 10px;
+  margin-top: 12rem;
   background: #fff;
   border-right: 0;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
@@ -309,17 +401,21 @@ header .intro-text {
   margin: 30px 0;
 }
 /* Services Section */
+/* Services Section */
 #services {
   padding: 100px 0;
   background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
   color: #fff;
 }
+
 #services .service-desc {
   margin: 10px 10px 20px;
 }
+
 #services h2 {
   color: #fff;
 }
+
 #services .section-title h2::after {
   position: absolute;
   content: "";
@@ -330,6 +426,7 @@ header .intro-text {
   margin-left: -30px;
   left: 50%;
 }
+
 #services i.fa {
   font-size: 42px;
   width: 120px;
@@ -340,17 +437,80 @@ header .intro-text {
   color: #fff;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
+
 #services h3 {
   font-weight: 500;
   padding: 5px 0;
   color: #fff;
 }
+
 #services p {
   color: rgba(255, 255, 255, 0.75);
 }
+
 #services .service-desc {
   margin-bottom: 40px;
 }
+
+/* Carousel Item Flex Display */
+.carousel {
+ position: static !important;
+  
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-item .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #fff;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.item .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.left.carousel-control,
+.right.carousel-control {
+  width: 5%;
+}
+
+.left.carousel-control .glyphicon-chevron-left,
+.right.carousel-control .glyphicon-chevron-right {
+  background-color: #fff;
+}
+
+
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;

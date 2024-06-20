@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseUrl } from "../util/baseUrl";
+import { baseUrl } from "../../src/baseUrl/baseUrl";
 
 const token = "YOUR_ACCESS_TOKEN";
 
@@ -8,7 +8,7 @@ const Transport = {
     // User routes
     registerUser: (data) => {
       return axios({
-        url: baseUrl + "api/users",
+        url: baseUrl + "auth/register",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -16,6 +16,16 @@ const Transport = {
         data,
       });
     },
+    loginUser: (data) => {
+        return axios({
+          url: baseUrl + "auth/login",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data,
+        });
+      },
     getAllUsers: () => {
       return axios({
         url: baseUrl + "api/users",
