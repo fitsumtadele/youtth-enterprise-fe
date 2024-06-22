@@ -28,7 +28,7 @@ const Transport = {
       },
     getAllUsers: () => {
       return axios({
-        url: baseUrl + "api/users",
+        url: baseUrl + "users",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Transport = {
     },
     getUserById: (id) => {
       return axios({
-        url: baseUrl + `api/users/${id}`,
+        url: baseUrl + `users/${id}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const Transport = {
     },
     updateUser: (id, data) => {
       return axios({
-        url: baseUrl + `api/users/${id}`,
+        url: baseUrl + `users/${id}`,
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const Transport = {
     },
     deleteUser: (id) => {
       return axios({
-        url: baseUrl + `api/users/${id}`,
+        url: baseUrl + `users/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const Transport = {
     },
     getSingleUser: () => {
       return axios({
-        url: baseUrl + "api/users/getSingleUser",
+        url: baseUrl + "users/getSingleUser",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Transport = {
     // YouthEnterprise routes
     addYouthEnterprise: (data) => {
       return axios({
-        url: baseUrl + "api/youth-enterprises",
+        url: baseUrl + "youth-enterprises",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const Transport = {
     },
     getAllYouthEnterprises: () => {
       return axios({
-        url: baseUrl + "api/youth-enterprises",
+        url: baseUrl + "youth-enterprises",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ const Transport = {
     },
     getYouthEnterpriseById: (id) => {
       return axios({
-        url: baseUrl + `api/youth-enterprises/${id}`,
+        url: baseUrl + `youth-enterprises/${id}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const Transport = {
     },
     updateYouthEnterprise: (id, data) => {
       return axios({
-        url: baseUrl + `api/youth-enterprises/${id}`,
+        url: baseUrl + `youth-enterprises/${id}`,
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ const Transport = {
     },
     deleteYouthEnterprise: (id) => {
       return axios({
-        url: baseUrl + `api/youth-enterprises/${id}`,
+        url: baseUrl + `youth-enterprises/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -126,7 +126,7 @@ const Transport = {
     // Request routes
     addRequest: (data) => {
       return axios({
-        url: baseUrl + "api/requests",
+        url: baseUrl + "requests",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -136,7 +136,7 @@ const Transport = {
     },
     getAllRequests: () => {
       return axios({
-        url: baseUrl + "api/requests",
+        url: baseUrl + "requests",
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -145,7 +145,7 @@ const Transport = {
     },
     getRequestById: (id) => {
       return axios({
-        url: baseUrl + `api/requests/${id}`,
+        url: baseUrl + `requests/${id}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -154,7 +154,7 @@ const Transport = {
     },
     updateRequest: (id, data) => {
       return axios({
-        url: baseUrl + `api/requests/${id}`,
+        url: baseUrl + `requests/${id}`,
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -164,7 +164,7 @@ const Transport = {
     },
     deleteRequest: (id) => {
       return axios({
-        url: baseUrl + `api/requests/${id}`,
+        url: baseUrl + `requests/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -175,7 +175,7 @@ const Transport = {
     // Chat routes
     addChat: (data) => {
       return axios({
-        url: baseUrl + "api/chats",
+        url: baseUrl + "chats",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -185,7 +185,7 @@ const Transport = {
     },
     getChatsByRequestId: (requestId) => {
       return axios({
-        url: baseUrl + `api/chats/request/${requestId}`,
+        url: baseUrl + `chats/request/${requestId}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -194,7 +194,7 @@ const Transport = {
     },
     getChatById: (id) => {
       return axios({
-        url: baseUrl + `api/chats/${id}`,
+        url: baseUrl + `chats/${id}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -203,7 +203,7 @@ const Transport = {
     },
     updateChat: (id, data) => {
       return axios({
-        url: baseUrl + `api/chats/${id}`,
+        url: baseUrl + `chats/${id}`,
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -213,7 +213,7 @@ const Transport = {
     },
     deleteChat: (id) => {
       return axios({
-        url: baseUrl + `api/chats/${id}`,
+        url: baseUrl + `chats/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -224,7 +224,7 @@ const Transport = {
     // Offer routes
     addOffer: (data) => {
       return axios({
-        url: baseUrl + "api/offers",
+        url: baseUrl + "offers",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -234,7 +234,7 @@ const Transport = {
     },
     getOffersByChatId: (chatId) => {
       return axios({
-        url: baseUrl + `api/offers/chat/${chatId}`,
+        url: baseUrl + `offers/chat/${chatId}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -243,7 +243,7 @@ const Transport = {
     },
     getOfferById: (id) => {
       return axios({
-        url: baseUrl + `api/offers/${id}`,
+        url: baseUrl + `offers/${id}`,
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -252,7 +252,7 @@ const Transport = {
     },
     updateOffer: (id, data) => {
       return axios({
-        url: baseUrl + `api/offers/${id}`,
+        url: baseUrl + `offers/${id}`,
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -262,7 +262,7 @@ const Transport = {
     },
     deleteOffer: (id) => {
       return axios({
-        url: baseUrl + `api/offers/${id}`,
+        url: baseUrl + `offers/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

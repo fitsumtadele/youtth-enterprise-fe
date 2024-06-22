@@ -14,6 +14,9 @@ import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
 import { AuthProvider } from './context/AuthContext'; 
+import { SocketProvider } from './context/SocketContext'; // Import SocketProvider
+import CompanyListMap from "./components/companyListMap";
+import ChatWidget from './components/ChatWidget'; // Import ChatWidget
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -28,27 +31,31 @@ const App = () => {
 
   return (
     <AuthProvider>
-      <Router>
-        <Navigation />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Header data={landingPageData.Header} />
-                <Services data={landingPageData.Services} />
-                <About data={landingPageData.About} />
-                <Features data={landingPageData.Features} />
-                <Gallery data={landingPageData.Gallery} />
-                <Testimonials data={landingPageData.Testimonials} />
-                <Team data={landingPageData.Team} />
-                <Contact data={landingPageData.Contact} />
-              </>
-            }
-          />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </Router>
+      <SocketProvider> 
+        <Router>
+          <Navigation />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header data={landingPageData.Header} />
+                  <Services data={landingPageData.Services} />
+                  <About data={landingPageData.About} />
+                  <Features data={landingPageData.Features} />
+                  <Gallery data={landingPageData.Gallery} />
+                  <Testimonials data={landingPageData.Testimonials} />
+                  <Team data={landingPageData.Team} />
+                  <Contact data={landingPageData.Contact} />
+                </>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/companies" element={<CompanyListMap />} />
+          </Routes>
+          <ChatWidget /> 
+        </Router>
+      </SocketProvider>
     </AuthProvider>
   );
 };

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; 
 import Transport from "../api/transport";
 
 export const Login = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({
     username: "",
@@ -31,6 +33,7 @@ export const Login = () => {
         const result = await login(formData);
         if (result.success) {
           alert(result.msg);
+          navigate('/companies');
         } else {
           alert("Failed to log in user!");
         }
