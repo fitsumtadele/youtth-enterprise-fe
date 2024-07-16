@@ -33,6 +33,10 @@ export const Login = () => {
         const result = await login(formData);
         if (result.success) {
           alert(result.msg);
+          // if(user){}
+          // else{
+
+          // }
           navigate('/companies');
         } else {
           alert("Failed to log in user!");

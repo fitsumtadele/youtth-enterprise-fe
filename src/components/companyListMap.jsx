@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import Transport from '../api/transport'; // Ensure correct import path
-import ChatModal from './chatModal'; 
+import Transport from '../api/transport'; 
+import ChatWidget from '../components/ChatWidget';
 
 const icon = L.icon({
-  iconUrl: 'img/pin.png', // Provide the path to your marker icon
+  iconUrl: 'img/pin.png', 
   iconSize: [25, 41],
   iconAnchor: [12, 41],
 });
@@ -22,8 +23,9 @@ const allianceLevelRequest = {
 const CompanyListMap = ({ user }) => {
   const [companies, setCompanies] = useState([]);
   const [selectedCompany, setSelectedCompany] = useState(null);
-  const [showChatModal, setShowChatModal] = useState(false);
+  const [showChatWidget, setShowChatWidget] = useState(false);
   const mapRef = useRef();
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchCompanies = async () => {
@@ -43,6 +45,11 @@ const CompanyListMap = ({ user }) => {
     if (current) {
       current.setView([company.latitude, company.longitude], 12);
     }
+  };
+
+  const handleRequestClick = (company) => {
+    setSelectedCompany(company);
+    navigate('/requests', { state: { company } }); // Pass company data to the requests page
   };
 
   const handleMarkerClick = (company) => {
@@ -83,15 +90,17 @@ const CompanyListMap = ({ user }) => {
           <div className="map-description">
             <h2>{selectedCompany.name}</h2>
             <p>{selectedCompany.description}</p>
-            <button className="map-contact-button" onClick={() => setShowChatModal(true)}>Contact</button>
+            <button className="map-contact-button" onClick={() => setShowChatWidget(true)}>Contact</button>
+            <span/>
+            <button className="map-contact-button" onClick={() => handleRequestClick(selectedCompany)}>Request</button>
           </div>
         )}
       </div>
       <div className="map-map">
         <MapContainer
           center={center}
-          zoom={6}
-          scrollWheelZoom={false}
+          zoom={10}
+          scrollWheelZoom={true}
           style={{ height: '100%', width: '100%' }}
           whenCreated={mapInstance => { mapRef.current = mapInstance }}
         >
@@ -113,13 +122,15 @@ const CompanyListMap = ({ user }) => {
           ))}
         </MapContainer>
       </div>
-      {selectedCompany && selectedCompany.id !== 'alliance' && (
-        <ChatModal
-          show={showChatModal}
-          onHide={() => setShowChatModal(false)}
-          selectedCompany={selectedCompany}
-          user={user}
-        />
+      {showChatWidget && (
+        <div className="chat-widget-overlay">
+          <ChatWidget
+            show={showChatWidget}
+            onHide={() => setShowChatWidget(false)}
+            selectedCompany={selectedCompany}
+            user={user}
+          />
+        </div>
       )}
     </div>
   );

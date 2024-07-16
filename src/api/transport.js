@@ -1,7 +1,8 @@
 import axios from "axios";
 import { baseUrl } from "../../src/baseUrl/baseUrl";
+import Cookies from 'js-cookie';
 
-const token = "YOUR_ACCESS_TOKEN";
+const token = Cookies.get('token');
 
 const Transport = {
   HTTP: {
@@ -125,11 +126,13 @@ const Transport = {
 
     // Request routes
     addRequest: (data) => {
+      const token = Cookies.get('token');
       return axios({
         url: baseUrl + "requests",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+           "Authorization": `${token}`
         },
         data,
       });
@@ -153,11 +156,13 @@ const Transport = {
       });
     },
     updateRequest: (id, data) => {
+      const token = Cookies.get('token');
       return axios({
         url: baseUrl + `requests/${id}`,
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+            "Authorization": `${token}`
         },
         data,
       });

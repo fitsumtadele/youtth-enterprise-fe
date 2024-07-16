@@ -1,21 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Transport from '../api/transport'; // Ensure correct import path
-import { useSocket } from '../context/SocketContext'; 
-
-const dummyMessages = {
-  '1': [
-    { id: 'm1', message: 'Hello, Addis Ababa Enterprise!', senderId: 'user1', receiverId: '550e8400-e29b-41d4-a716-446655440001' },
-    { id: 'm2', message: 'Hello! How can we help you today?', senderId: '550e8400-e29b-41d4-a716-446655440001', receiverId: 'user1' },
-  ],
-  '2': [
-    { id: 'm1', message: 'Hello, Dire Dawa Enterprise!', senderId: 'user1', receiverId: '550e8400-e29b-41d4-a716-446655440002' },
-    { id: 'm2', message: 'Hello! How can we help you today?', senderId: '550e8400-e29b-41d4-a716-446655440002', receiverId: 'user1' },
-  ],
-  '3': [
-    { id: 'm1', message: 'Hello, Mekelle Enterprise!', senderId: 'user1', receiverId: '550e8400-e29b-41d4-a716-446655440003' },
-    { id: 'm2', message: 'Hello! How can we help you today?', senderId: '550e8400-e29b-41d4-a716-446655440003', receiverId: 'user1' },
-  ],
-};
+import { useSocket } from '../context/SocketContext';
 
 const ChatBox = ({ chat, onBack, user }) => {
   const [messages, setMessages] = useState([]);
@@ -23,16 +8,15 @@ const ChatBox = ({ chat, onBack, user }) => {
   const socket = useSocket();
 
   useEffect(() => {
-    // Load dummy messages
-    // try {
-    //     const response = await Transport.HTTP.getChatsByRequestId(chat.id);
-    //     setMessages(response.data);
-    //   } catch (error) {
-    //     console.error('Failed to fetch messages', error);
-    //   }
-    // };
-    // fetchMessages();
-    setMessages(dummyMessages[chat.id] || []);
+    const fetchMessages = async () => {
+      try {
+        const response = await Transport.HTTP.getChatsByRequestId(chat.id);
+        setMessages(response.data);
+      } catch (error) {
+        console.error('Failed to fetch messages', error);
+      }
+    };
+    fetchMessages();
 
     if (socket.current) {
       socket.current.emit('joinRoom', chat.id);
@@ -52,14 +36,14 @@ const ChatBox = ({ chat, onBack, user }) => {
     const message = {
       id: `m${messages.length + 1}`,
       message: newMessage,
-      senderId: user?.id  || 'default-user',
+      senderId: user?.id || 'default-user',
       receiverId: chat.receiverId,
       requestId: chat.id,
       room: chat.id,
     };
 
     try {
-      // Add the new message to the dummy messages
+      await Transport.HTTP.sendMessage(message);
       setMessages([...messages, message]);
       socket.current.emit('sendMessage', message);
       setNewMessage('');
@@ -76,7 +60,7 @@ const ChatBox = ({ chat, onBack, user }) => {
       </div>
       <div className="chat-box-messages">
         {messages.map((message) => (
-          <div key={message.id} className={`chat-message ${message.senderId === 'default-user' ? 'sent' : 'received'}`}>
+          <div key={message.id} className={`chat-message ${message.senderId === user.id ? 'sent' : 'received'}`}>
             <p>{message.message}</p>
           </div>
         ))}
