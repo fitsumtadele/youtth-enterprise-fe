@@ -89,12 +89,12 @@
     {
       "icon": "fa fa-hospital-o",
       "name": "Comprehensive Training in Point of Care Applications",
-      "text": "We provide specialized training in essential Point of Care applications, including DHIS2, Dagu, EMR, APTS, and more. Our programs equip healthcare professionals with the skills needed to manage patient data efficiently and improve healthcare delivery, offering practical, hands-on experience tailored to your organization's needs."
+      "text": "We provide specialized training in essential Point of Care applications, including DHIS2, Dagu, EMR, APTS, and more. Our programs equip healthcare professionals with the skills needed to improve healthcare delivery."
     },
     {
       "icon": "fa fa-lightbulb-o",
       "name": "Consulting, Advisory Services, and Vendor Management",
-      "text": "We specialize in providing strategic consulting, advisory services, and vendor management solutions tailored to the unique needs of healthcare organizations. Our expert consultants offer actionable insights to optimize processes, drive innovation, and ensure seamless integration of IT systems. Partner with us to streamline operations, mitigate risks, and achieve your organizational goals efficiently."
+      "text": "We specialize in providing strategic consulting, advisory services, and vendor management solutions tailored to the unique needs of healthcare organizations."
     }
 ],
   "Testimonials": [
@@ -131,23 +131,43 @@
   ],
   "Team": [
     {
-      "img": "img/team/01.jpg",
+      "img": "img/team/Eskindir.jpg",
       "name": "Eskinder Fisseha",
       "job": "Director"
     },
     {
-      "img": "img/team/02.jpg",
+      "img": "img/team/Eyob.jpg",
       "name": "Eyob Eyayesh",
       "job": "Senior Designer"
     },
     {
-      "img": "img/team/02.jpg",
+      "img": "img/team/wolde.jpg",
       "name": "Wolde Dereje",
       "job": "Senior Designer"
     },
     {
-      "img": "img/team/04.jpg",
+      "img": "img/team/Hiwot.jpg",
       "name": "Hiwot",
+      "job": "Project Manager"
+    },
+    {
+      "img": "img/team/kate.jpg",
+      "name": "Kate",
+      "job": "Project Manager"
+    },
+    {
+      "img": "img/team/kidis.jpg",
+      "name": "kidist",
+      "job": "Project Manager"
+    },
+    {
+      "img": "img/team/Sisay.jpg",
+      "name": "Sisay",
+      "job": "Project Manager"
+    },
+    {
+      "img": "img/team/shime.jpg",
+      "name": "Shime",
       "job": "Project Manager"
     }
   ],

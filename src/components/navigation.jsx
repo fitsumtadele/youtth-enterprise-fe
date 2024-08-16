@@ -1,154 +1,301 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 export const Navigation = () => {
   const { user, logout } = useAuth();
-  const role = user ? user.role : 'guest'; 
+  const role = user ? user.role : 'guest';
 
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
-      <div className="container">
-        <div className="navbar-header">
-          <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-          >
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-          <a className="navbar-brand page-scroll" href="/#page-top">
-            <img src="img/logo-01.png" alt="logo" style={{height: "inherit", width: "20rem", marginTop: "-1rem" }} />
-          </a>
-        </div>
-
-        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul className="nav navbar-nav navbar-right">
+    <Navbar
+      expand="lg"
+      style={{
+        paddingTop: "1rem",
+        paddingBottom: "1rem",
+        backgroundColor: "#f8f9fa",
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        zIndex: 1000,
+      }}
+    >
+      <Container>
+        <Navbar.Brand href="/#page-top">
+          <img
+            src="img/logo-01.png"
+            alt="logo"
+            style={{
+              height: "auto",
+              width: "20rem",
+            }}
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarResponsive">
+          <span>
+            <span
+              style={{
+                display: "inline-block",
+                height: "2px",
+                backgroundColor: "#333",
+                width: "25px",
+                borderRadius: "5px",
+                position: "relative",
+              }}
+            />
+          </span>
+        </Navbar.Toggle>
+        <Navbar.Collapse id="navbarResponsive">
+          <Nav className="ms-auto">
             {user ? (
               <>
-                <li>
-                  <Link to="/companies" className="page-scroll">
+                <Nav.Item>
+                  <Link
+                    to="/companies"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Company
                   </Link>
-                </li>
-                {/* <li>
-                  <Link to="/chat" className="page-scroll">
-                    Messages
-                  </Link>
-                </li> */}
+                </Nav.Item>
                 {role === 'requester' && (
-                  <li>
-                    <Link to="/requests" className="page-scroll">
+                  <Nav.Item>
+                    <Link
+                      to="/requests"
+                      className="nav-link"
+                      style={{
+                        color: "#333",
+                        fontWeight: "500",
+                        margin: "0 10px",
+                        textDecoration: "none",
+                      }}
+                    >
                       Request
                     </Link>
-                  </li>
+                  </Nav.Item>
                 )}
                 {role === 'youthEnterprise' && (
-                  <>
-                    {/* <li>
-                      <Link to="/youth-dashboard" className="page-scroll">
-                        Dashboard
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/youth-profile" className="page-scroll">
-                        Profile
-                      </Link>
-                    </li> */}
-                    <li>
-                      <Link to="/requested" className="page-scroll">
-                        Requested
-                      </Link>
-                    </li>
-                  </>
+                  <Nav.Item>
+                    <Link
+                      to="/requested"
+                      className="nav-link"
+                      style={{
+                        color: "#333",
+                        fontWeight: "500",
+                        margin: "0 10px",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Requested
+                    </Link>
+                  </Nav.Item>
                 )}
                 {role === 'allianceAdmin' && (
                   <>
-                    <li>
-                      <Link to="/admin-dashboard" className="page-scroll">
+                    <Nav.Item>
+                      <Link
+                        to="/admin-dashboard"
+                        className="nav-link"
+                        style={{
+                          color: "#333",
+                          fontWeight: "500",
+                          margin: "0 10px",
+                          textDecoration: "none",
+                        }}
+                      >
                         Dashboard
                       </Link>
-                    </li>
-                    <li>
-                      <Link to="/admin-user-management" className="page-scroll">
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Link
+                        to="/admin-user-management"
+                        className="nav-link"
+                        style={{
+                          color: "#333",
+                          fontWeight: "500",
+                          margin: "0 10px",
+                          textDecoration: "none",
+                        }}
+                      >
                         User Management
                       </Link>
-                    </li>
-                    {/* <li>
-                      <Link to="/admin-messages" className="page-scroll">
-                        Messages
-                      </Link>
-                    </li> */}
-                    <li>
-                      <Link to="/all-requested" className="page-scroll">
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Link
+                        to="/all-requested"
+                        className="nav-link"
+                        style={{
+                          color: "#333",
+                          fontWeight: "500",
+                          margin: "0 10px",
+                          textDecoration: "none",
+                        }}
+                      >
                         Requested
                       </Link>
-                    </li>
+                    </Nav.Item>
                   </>
                 )}
-                <li className="navbar-user">
-                  <img src="../img/actor.png" alt="User Icon" className="user-icon" />
-                  <span>{user.username}</span>
-                </li>
-                <li>
-                  <Link to="/#page-top">
-                    <button href="/#page-top" onClick={logout} className="btn btn-link logout-button">
-                      Logout
-                    </button>
-                  </Link>
-                </li>
+                <Nav.Item className="d-flex align-items-center">
+                  <img
+                    src="../img/actor.png"
+                    alt="User Icon"
+                    style={{
+                      width: "30px",
+                      borderRadius: "50%",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <span style={{ fontWeight: "500", color: "#333" }}>
+                    {user.username}
+                  </span>
+                </Nav.Item>
+                <Link to="/#page-top">
+                <Nav.Item>
+
+                
+                  <button
+                    onClick={logout}
+                    href="/#page-top"
+                    className="btn btn-link nav-link"
+                    style={{
+                      color: "#007bff",
+                      background: "none",
+                      border: "none",
+                      padding: 0,
+                      textDecoration: "none",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    Logout
+                  </button>
+                </Nav.Item>
+                </Link>
               </>
             ) : (
               <>
-                <li>
-                  <a href="/#services" className="page-scroll">
+                <Nav.Item>
+                  <a
+                    href="/#services"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Services
                   </a>
-                </li>
-                <li>
-                  <a href="/#about" className="page-scroll">
+                </Nav.Item>
+                <Nav.Item>
+                  <a
+                    href="/#about"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     About
                   </a>
-                </li>
-                <li>
-                  <a href="/#features" className="page-scroll">
+                </Nav.Item>
+                <Nav.Item>
+                  <a
+                    href="/#features"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Features
                   </a>
-                </li>
-                <li>
-                  <a href="/#portfolio" className="page-scroll">
+                </Nav.Item>
+                <Nav.Item>
+                  <a
+                    href="/#portfolio"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Gallery
                   </a>
-                </li>
-                <li>
-                  <a href="/#testimonials" className="page-scroll">
+                </Nav.Item>
+                <Nav.Item>
+                  <a
+                    href="/#testimonials"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Testimonials
                   </a>
-                </li>
-                <li>
-                  <a href="/#team" className="page-scroll">
+                </Nav.Item>
+                <Nav.Item>
+                  <a
+                    href="/#team"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Team
                   </a>
-                </li>
-                <li>
-                  <a href="/#contact" className="page-scroll">
+                </Nav.Item>
+                <Nav.Item>
+                  <a
+                    href="/#contact"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Contact
                   </a>
-                </li>
-                <li>
-                  <Link to="/login" className="page-scroll">
+                </Nav.Item>
+                <Nav.Item>
+                  <Link
+                    to="/login"
+                    className="nav-link"
+                    style={{
+                      color: "#333",
+                      fontWeight: "500",
+                      margin: "0 10px",
+                      textDecoration: "none",
+                    }}
+                  >
                     Login
                   </Link>
-                </li>
+                </Nav.Item>
               </>
             )}
-          </ul>
-        </div>
-      </div>
-    </nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };

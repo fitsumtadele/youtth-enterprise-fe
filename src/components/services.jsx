@@ -19,12 +19,12 @@ export const Services = (props) => {
             dapibus leonec.
           </p>
         </div>
-        <div id="servicesCarousel" className="carousel slide" data-ride="carousel" data-interval="3000">
-          <div className="carousel-inner">
+        <div id="servicesCarousel" className="carousel slide" data-ride="carousel" data-interval="3000" style={{minHeight:`20rem !important`}}>
+          <div className="carousel-inner" style={{minHeight:`20rem !important`}}>
             {chunkedData.length > 0
               ? chunkedData.map((chunk, index) => (
                   <div key={index} className={`item ${index === 0 ? "active" : ""}`}>
-                    <div className="row">
+                    <div className="row" style={{minHeight:`20rem !important`}}>
                       {chunk.map((d, i) => (
                         <div key={`${d.name}-${i}`} className="col-md-4">
                           <i className={`fa ${d.icon}`}></i>

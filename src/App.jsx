@@ -27,6 +27,7 @@ import RequestsPage from './components/RequestPage';
 import RequestedPage from './components/youthEnterprise/RequestedPage';
 import AllRequestedPage from './components/alliance/RequestedPage';
 import RequestDetails from './components/youthEnterprise/RequestedDetails';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -58,7 +59,7 @@ const App = () => {
                   <Features data={landingPageData.Features} />
                   <Gallery data={landingPageData.Gallery} />
                   <Testimonials data={landingPageData.Testimonials} />
-                  <Team data={landingPageData.Team} />
+                  <Team data={landingPageData.Team || []} />
                   <Contact data={landingPageData.Contact} />
                 </>
               }
